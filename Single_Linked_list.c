@@ -29,7 +29,7 @@ void insert_begin(){
     node *temp;
     temp=(node *)malloc(sizeof(node));
     
-    if(temp==NULL){     printf("\nError");  return ;   }
+    if(temp==NULL){     printf("Memory not Allocated\n");	return;   }
     
     temp->data=get_data();
     
@@ -42,7 +42,7 @@ void insert_end(){
     node *temp,*ptr;
     temp=(node *)malloc(sizeof(node));
     
-    if(temp==NULL){     printf("\nError");  return ;   }
+    if(temp==NULL){     printf("Memory not Allocated\n");	return;   }
     
     temp->data=get_data();
     
@@ -65,7 +65,7 @@ void insert_random(){
     node *temp,*ptr=head,*ptr_before=head;
     
     temp=(node *)malloc(sizeof(node));
-    if(temp==NULL){     printf("Error\n");  return ;   }
+    if(temp==NULL){     printf("Memory not Allocated\n");	return;   }
     
     temp->data=get_data();
     
@@ -192,7 +192,8 @@ void main(){
             case 6 :    delete_random();    break;
             case 7 :    search();           break;
             case 8 :    display();          break;
-            default:    exit(1);
+            default:    free(head);	head=NULL;
+			exit(1);
         }
     }
 }
