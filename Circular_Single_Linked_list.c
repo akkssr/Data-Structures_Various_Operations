@@ -82,7 +82,7 @@ void insert_random(){                              												 //first node and
     node *temp,*ptr=head;
     
     temp=(node *)malloc(sizeof(node));
-    if(temp==NULL){     printf("Error\n");  exit(-1);   }
+    if(temp==NULL){     printf("Memory not Allocated\n");	return;   }
     
     temp->data=get_data();
     
