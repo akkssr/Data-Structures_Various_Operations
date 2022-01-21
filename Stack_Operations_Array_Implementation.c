@@ -1,6 +1,8 @@
 
 // Stack Operations Using Arrays by siraj
 
+/* Functions - void push(), void pop(),
+               void display()                   */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +14,7 @@ void push(int *arrays){
     int temp;
     
     arrays=(int *)realloc(arrays,sizeof(int));
-    if(arrays==NULL){       printf("\nError\n");        exit(-1);   }
+    if(arrays==NULL){       printf("\nMemory not Allocated\n");        return;   }
     
     printf("\nEnter the Element - ");
     scanf("%d",&temp);
@@ -32,7 +34,7 @@ void display(int *arrays){
     
     if(top==-1){        printf("\nStack is empty\n");   return ;    }
     
-    for(int i=top;i>=0;i--){                                    // Last in First Out
+    for(int i=top;i>=0;i--){                                                // Last in First Out
         printf("%d\t",arrays[i]);
     }
 }
@@ -43,13 +45,14 @@ void main()
 
 start:  printf("Enter the Number of Element - ");
         scanf("%d",&N);
-        if(N<1){    printf("\nInvalid Number\n");       goto start;     }
+    
+        if(N<1){    printf("\nInvalid Number\n");       goto start;     }       //To check we are getting Positive Integer only
     
         int *arrays=(int *)malloc(sizeof(int)*N);
-        if(arrays==NULL){       printf("\nError\n");        exit(-1);   }
+        if(arrays==NULL){       printf("\nMemory not Allocated\n");        exit(-1);   }
         
         printf("\nEnter the %d Elements\n",N);
-        for(int i=0;i<N;i++){                           //last Element is the top of the stack
+        for(int i=0;i<N;i++){                                                   //last Element is the top of the stack
             scanf("%d",&arrays[i]);
             top++;
         }
