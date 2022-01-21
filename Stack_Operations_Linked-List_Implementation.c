@@ -1,6 +1,8 @@
 
 // Stack Operations Using Linked-List by siraj
 
+/* Functions - void push(), void pop(),
+               void display()                       */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,7 +18,7 @@ node *head=NULL;
 void push(){
     
     node *temp=(node *)malloc(sizeof(node));
-    if(temp==NULL){     printf("\nError\n");        exit(-1);   }
+    if(temp==NULL){     printf("Memory not Allocated\n");	return;   }
     
     printf("\nEnter the Element - ");
     scanf("%d",&temp->data);
@@ -64,10 +66,11 @@ void main()
             scanf("%d",&choice);
         
             switch(choice){
-                case 1: push();         break;
-                case 2: pop();          break;
-                case 3: display();      break;
-                default: exit(1);
+                case 1:  push();         break;
+                case 2:  pop();          break;
+                case 3:  display();      break;
+                default: free(head);    head=NULL;
+                         exit(1);
             }
         }
 }
