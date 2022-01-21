@@ -1,5 +1,7 @@
-// Queue using Linked-List by siraj
+// Queue using Single-Linked-List by siraj
 
+/* Functions -- void enqueue(), void dequeue(),
+                void display()                      */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,12 +13,12 @@ typedef struct node{
 
 node *front=NULL,*rear=NULL;
 
-void insert(){
+void enqueue(){
     
     int temp_data;
     
     node *temp=(node *)malloc(sizeof(node));
-    if(temp==NULL){     printf("Memory Not allocated\n");   exit(-1);   }
+    if(temp==NULL){     printf("Memory Not allocated\n");   return;   }
     
     printf("\nEnter the element - ");
     scanf("%d",&temp_data);
@@ -34,7 +36,7 @@ void insert(){
     }
 }
 
-void delete(){
+void dequeue(){
     
     node *ptr=rear;
     
@@ -73,14 +75,15 @@ void display(){
 void main()
 {
     int choice;
+    printf("\nQueue Implemeted using Single Linked List\n");
     while(1){
-        printf("\n1.Insert\t2. Delete\t3. Display\t4. Exit -");
+        printf("\n1.Enqueue\t2. Dequeue\t3. Display\t4. Exit -");
         scanf("%d",&choice);
         
         switch(choice){
-            case 1: insert();       break;
-            case 2: delete();       break;
-            case 3: display();      break;
+            case 1:  enqueue();       break;
+            case 2:  dequeue();       break;
+            case 3:  display();       break;
             default: free(front);   free(rear);
                      front=NULL;    rear=NULL;
                      exit(1);
