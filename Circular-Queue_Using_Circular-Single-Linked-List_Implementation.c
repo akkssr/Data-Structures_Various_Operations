@@ -67,7 +67,7 @@ void display(){
     else{
         printf("\nRear-->  ");
         while(1){                                                     
-            printf("%d  ",ptr->data);											//this is the sequence because its circular-Linked-List
+            printf("%d  ",ptr->data);				//this is the sequence because its circular-Linked-List
             ptr=ptr->next;
             if(ptr==rear){         break;         } 
         }
