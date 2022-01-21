@@ -30,7 +30,7 @@ void insert_begin(){
     node *temp,*ptr=head;
     
     temp=(node *)malloc(sizeof(node));
-    if(temp==NULL){     printf("\nError\n");        exit(-1);   }
+    if(temp==NULL){     printf("\nMemory not Allocated\n");        return;   }
     
     temp->data=get_data();
     
@@ -67,7 +67,7 @@ void insert_end(){
     node *temp,*ptr=head;
     
     temp=(node *)malloc(sizeof(node));
-    if(temp==NULL){     printf("Error\n");      exit(-1);       }
+    if(temp==NULL){     printf("Memory not Allocated\n");      return;       }
     
     temp->data=get_data();
     
@@ -101,7 +101,7 @@ void insert_random(){                                           //first and last
     node *temp,*ptr=head,*ptr_before=head;
     
     temp=(node *)malloc(sizeof(node));
-    if(temp==NULL){     printf("Error\n");      exit(-1);       }
+    if(temp==NULL){     printf("Memory not Allocated\n");      return;       }
     
     temp->data=get_data();
     
