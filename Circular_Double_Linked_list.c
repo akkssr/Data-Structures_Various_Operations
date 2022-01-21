@@ -284,7 +284,8 @@ void main(){
             case 6 :    delete_random();    break;
             case 7 :    search();           break;
             case 8 :    display();          break;
-            default:    exit(1);
+            default:    free(head);     head=NULL;
+                        exit(1);
         }
     }
 }
